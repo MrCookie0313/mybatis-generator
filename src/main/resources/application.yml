@@ -1,0 +1,16 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.01:3306/helloword?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+logging.level.com.demo.mapper: debug
+server:
+  port: 8088
+mybatis:
+  mapper-locations: classpath*:mybatis/**/*.xml
+  type-aliases-package: com.cookie.mybatis.model
