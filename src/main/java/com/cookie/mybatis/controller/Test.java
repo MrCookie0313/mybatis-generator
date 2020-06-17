@@ -10,7 +10,6 @@ public class Test {
         String str1= "1";
         String str2= "22";
         String str3= "333";
-        String str4= "444";
 
     }
 }
