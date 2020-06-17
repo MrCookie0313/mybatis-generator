@@ -1,4 +1,3 @@
-
 package com.cookie.mybatis.controller;
 
 /**
@@ -10,7 +9,7 @@ public class Test {
     public static void main(String[] args) {
         String str1= "1";
         String str2= "22";
-        String str33= "33";
+        String str3= "333";
 
     }
 }
