@@ -4,9 +4,12 @@ import com.cookie.mybatis.mapper.OrderMapper;
 import com.cookie.mybatis.mapper.RunoobMapper;
 import com.cookie.mybatis.model.Order;
 import com.cookie.mybatis.model.Runoob;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+import com.cookie.mybatis.service.BatchServiceImpl;
+import com.cookie.mybatis.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class TestController {
@@ -16,6 +19,12 @@ public class TestController {
     @Autowired(required = false)
     private OrderMapper orderMapper;
 
+    @Autowired
+    private BatchServiceImpl batchService;
+
+
+    @Autowired
+    private OrderService orderService;
     @RequestMapping(value = "/getRunoob", method = RequestMethod.GET)
     public Runoob getDetail(Integer id) {
         Runoob runoob = runoobMapper.selectByPrimaryKey(id);
@@ -30,5 +39,11 @@ public class TestController {
     @RequestMapping(value = "/getAllInfo", method = RequestMethod.GET)
     public Order getAllInfo(String id) {
         return orderMapper.selectByPrimaryKey(id);
+    }
+
+    @RequestMapping(value = "/getInfoIds", method = RequestMethod.GET)
+    public List<Order> getAllInfo(@RequestParam(value = "ids") List<String> ids) {
+
+        return batchService.selectByBatch(ids);
     }
 }
