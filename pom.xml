@@ -40,7 +40,16 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
+		<!-- 重试机制 -->
+		<dependency>
+			<groupId>org.springframework.retry</groupId>
+			<artifactId>spring-retry</artifactId>
+			<version>1.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
 		<!-- druid数据库连接池 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -58,6 +67,7 @@
 <!--			<artifactId>mybatis-typehandlers-jsr310</artifactId>-->
 <!--			<version>1.0.2</version>-->
 <!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/io.shardingjdbc/sharding-jdbc-core -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
