@@ -1,5 +1,14 @@
 package com.cookie.mybatis.model;
+import lombok.*;
+import lombok.experimental.Accessors;
 
+/**
+ * @author sunbing_vendor
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserInfo {
     private Integer id;
 
@@ -7,27 +16,4 @@ public class UserInfo {
 
     private Long sex;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public Long getSex() {
-        return sex;
-    }
-
-    public void setSex(Long sex) {
-        this.sex = sex;
-    }
 }
