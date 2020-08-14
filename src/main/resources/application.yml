@@ -2,11 +2,22 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.198.22.155:3306/ordermgr?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-    username: root
-    password: QAZwsx123!@#
+    url: jdbc:mysql://172.20.52.115:3306/ordermgr?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: evoa_dev
+    password: Goodsense@2020
     type: com.zaxxer.hikari.HikariDataSource
-
+xxl:
+  job:
+    accessToken:
+    admin:
+      addresses: http://127.0.0.1:8080/xxl-job-admin
+    executor:
+      appname: xxl-job-executor-athena
+      address: http://127.0.0.1:8080/xxl-job-admin
+      ip:
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: -1
+      port: 9999
 
 logging.level.com.demo.mapper: debug
 server:
