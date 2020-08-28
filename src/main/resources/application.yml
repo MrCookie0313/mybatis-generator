@@ -25,3 +25,10 @@ server:
 mybatis:
   mapper-locations: classpath*:mybatis/**/*.xml
   type-aliases-package: com.cookie.mybatis.model
+
+
+timeout:
+  betting: 20
+  gaming: 30
+  payout: 40
+  halt: 60
