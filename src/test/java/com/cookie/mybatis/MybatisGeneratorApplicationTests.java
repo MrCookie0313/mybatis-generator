@@ -13,8 +13,6 @@ class MybatisGeneratorApplicationTests {
     @Value("${timeout.gaming}")
     private int GAMING;
 
-    private String hello;
-
     @Test
     void contextLoads() {
         System.out.println("BETTING = " + BETTING);
