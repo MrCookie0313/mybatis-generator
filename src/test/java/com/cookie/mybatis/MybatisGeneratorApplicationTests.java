@@ -15,6 +15,7 @@ class MybatisGeneratorApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("test");
         System.out.println("BETTING = " + BETTING);
         System.out.println("GAMING = " + GAMING);
 
