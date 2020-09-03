@@ -32,3 +32,9 @@ timeout:
   gaming: 30
   payout: 40
   halt: 60
+  ad: "222.443.321.41,223.443.22.321"
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: countSql
