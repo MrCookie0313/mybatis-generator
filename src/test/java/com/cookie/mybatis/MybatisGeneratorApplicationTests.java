@@ -1,7 +1,6 @@
 package com.cookie.mybatis;
 
 import com.alibaba.fastjson.JSON;
-import com.cookie.mybatis.config.GameVo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,8 +20,6 @@ class MybatisGeneratorApplicationTests {
     @Value("${timeout.ad}")
     private List<String> ad;
 
-    @Autowired
-    private GameVo gameVo;
 
     @Test
     void contextLoads() {
