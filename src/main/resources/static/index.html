@@ -6,19 +6,24 @@
 </head>
 <body>
 <h2>前台系统</h2>
+<div>
+    <button onclick="sumbit()">发送请求</button>
+</div>
 <p id="info"></p>
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
 <script>
-    $.ajax({
-        url: 'http://localhost:9001/hello',
-        type: "GET",
-        success: function (data) {
-            $("#info").html("跨域访问成功:"+data);
-        },
-        error: function (data) {
-            $("#info").html("跨域失败!!");
-        }
-    })
+    function sumbit() {
+        $.ajax({
+            url: 'http://localhost:8080/excel/export',
+            type: "POST",
+            success: function (data) {
+                $("#info").html("跨域访问成功:" + data);
+            },
+            error: function (data) {
+                $("#info").html("跨域失败!!");
+            }
+        })
+    }
 </script>
 </html>
