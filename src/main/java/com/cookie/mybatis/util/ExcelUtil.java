@@ -18,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Author zl
- * @Date 2018-12-07
- * @Des 我们系统是由的poi3.1.5 和阿里最新的easyExcel冲突！！
- * @Address https://github.com/alibaba/easyexcel
+ * @author Cookie
+ * @version 1.0
+ * @date 2020/09/16 17:46
+ * @Des todo
  */
 public class ExcelUtil {
 
