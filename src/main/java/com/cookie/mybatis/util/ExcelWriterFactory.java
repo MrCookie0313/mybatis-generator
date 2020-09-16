@@ -15,16 +15,16 @@ import java.util.List;
  * @date 2020/09/16 17:46
  * @Des todo
  */
-public class ExcelWriterFactroy extends ExcelWriter {
+public class ExcelWriterFactory extends ExcelWriter {
     private OutputStream outputStream;
     private int sheetNo = 1;
 
-    public ExcelWriterFactroy(OutputStream outputStream, ExcelTypeEnum typeEnum) {
+    public ExcelWriterFactory(OutputStream outputStream, ExcelTypeEnum typeEnum) {
         super(outputStream, typeEnum);
         this.outputStream = outputStream;
     }
 
-    public ExcelWriterFactroy write(List<? extends BaseRowModel> list, String sheetName,
+    public ExcelWriterFactory write(List<? extends BaseRowModel> list, String sheetName,
                                     BaseRowModel object) {
         this.sheetNo++;
         try {
