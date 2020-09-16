@@ -8,14 +8,32 @@
 <h2>前台系统</h2>
 <div>
     <button onclick="sumbit()">发送请求</button>
+    <button onclick="b()">下载</button>
 </div>
 <p id="info"></p>
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    function a() {
+        axios.post('http://localhost:8080/excel/export', {},
+            {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
+        ).then(function (response) {
+            var body = new Blob([response.data])
+            var downloadElement = document.createElement('a')
+            var href = window.URL.createObjectURL(body);
+            console.log(response);
+        })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
+</script>
 <script>
     function sumbit() {
         $.ajax({
-            url: 'http://localhost:8080/excel/export',
+            url: 'http://localhost:8080',
             type: "POST",
             success: function (data) {
                 $("#info").html("跨域访问成功:" + data);
@@ -23,6 +41,42 @@
             error: function (data) {
                 $("#info").html("跨域失败!!");
             }
+        });
+    }
+
+    function download() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('post', 'http://localhost:8080/excel/export', true);
+        xhr.responseType = 'blob';
+        xhr.onload = function () {
+            var blob = this.response;
+            if (window.navigator.msSaveOrOpenBlob) {
+                window.navigator.msSaveBlob(blob, 'msSaveBlob_testFile.txt');
+            } else {
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = 'msSaveBlob_testFile.txt';
+                link.click();
+                window.URL.revokeObjectURL(link.href);
+            }
+            xhr.send(null);
+        }
+    }
+
+    function b() {
+        axios.post(baseURL, {},
+            {responseType: "blob"}
+        ).then(res => {
+            //这里res.data是返回的blob对象
+            var blob = new Blob([res.data], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8'}); //application/vnd.openxmlformats-officedocument.spreadsheetml.sheet这里表示xlsx类型
+            var downloadElement = document.createElement('a');
+            var href = window.URL.createObjectURL(blob); //创建下载的链接
+            downloadElement.href = href;
+            downloadElement.download = 'xxx.xlsx'; //下载后文件名
+            document.body.appendChild(downloadElement);
+            downloadElement.click(); //点击下载
+            document.body.removeChild(downloadElement); //下载完成移除元素
+            window.URL.revokeObjectURL(href); //释放掉blob对象
         })
     }
 </script>
