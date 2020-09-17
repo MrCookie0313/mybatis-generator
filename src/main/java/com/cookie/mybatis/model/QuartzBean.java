@@ -1,10 +1,12 @@
 package com.cookie.mybatis.model;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
  * @author sunbing
  */
+@ApiModel("定时任务操作VO")
 @Data
 public class QuartzBean {
     /**

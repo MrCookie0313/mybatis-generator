@@ -4,6 +4,8 @@ import com.alibaba.druid.sql.visitor.SQLASTOutputVisitor;
 import com.cookie.mybatis.job.MyTask1;
 import com.cookie.mybatis.model.QuartzBean;
 import com.cookie.mybatis.quartz.QuartzUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.Scheduler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/quartz/")
 @Slf4j
+@Api("任务管理接口")
 public class QuartzController {
     //注入任务调度
     @Autowired
@@ -22,6 +25,7 @@ public class QuartzController {
 
     @RequestMapping(value = "/createJob",method = RequestMethod.POST)
     @ResponseBody
+    @ApiOperation(value = "查询人像库列表", notes = "createJob")
     public String createJob(QuartzBean quartzBean) {
         try {
 
