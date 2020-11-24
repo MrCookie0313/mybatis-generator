@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -36,6 +37,7 @@ public class RedisService implements ApplicationRunner {
         taskBody.setName("测试DTO实体类的姓名,20秒之后执行");
         //添加队列20秒之后执行
         redisDelayedQueue.addQueue(taskBody, 20, TimeUnit.SECONDS);
+        log.info("当前时间是{}", LocalDateTime.now().toString());
 
 
 

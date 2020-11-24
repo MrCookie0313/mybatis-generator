@@ -1,33 +1,33 @@
-server:
-  port: 8089
-
-#consul 服务地址
-nacos:
-  server-addr: localhost:8848
-
-spring:
-  application:
-    name: mybatis-service
-  cloud:
-    nacos:
-      config:
-        server-addr: ${nacos.server-addr}
-        file-extension: yml
-      discovery:
-        server-addr: ${nacos.server-addr}
-  main:
-    allow-bean-definition-overriding: true
-
-# actuator management
-management:
-  info:
-    defaults:
-      enabled: true
-  endpoint:
-    health:
-      show-details: ALWAYS
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-
+#server:
+#  port: 8089
+#
+##consul 服务地址
+#nacos:
+#  server-addr: localhost:8848
+#
+#spring:
+#  application:
+#    name: mybatis-service
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: ${nacos.server-addr}
+#        file-extension: yml
+#      discovery:
+#        server-addr: ${nacos.server-addr}
+#  main:
+#    allow-bean-definition-overriding: true
+#
+## actuator management
+#management:
+#  info:
+#    defaults:
+#      enabled: true
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#
