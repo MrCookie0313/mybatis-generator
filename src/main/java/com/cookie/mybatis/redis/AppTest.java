@@ -33,7 +33,7 @@ public class AppTest {
      * 生产者,生成5个订单
      */
     public void productionDelayMessage() {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 2; i++) {
             Calendar instance = Calendar.getInstance();
             // 3秒后执行
             instance.add(Calendar.SECOND, 3 + i);

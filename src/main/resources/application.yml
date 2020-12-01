@@ -44,3 +44,7 @@ pagehelper:
 logging:
   level:
     io.swagger.models.parameters.AbstractSerializableParameter: error
+
+imageFace:
+  config:
+    minScore: 0.8

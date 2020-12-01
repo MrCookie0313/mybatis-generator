@@ -20,12 +20,15 @@ class MybatisGeneratorApplicationTests {
     @Value("${timeout.ad}")
     private List<String> ad;
 
+    @Value("${imageFace.config.minScore}")
+    private double minScore;
+
 
     @Test
     void contextLoads() {
         System.out.println("BETTING = " + BETTING);
         System.out.println("GAMING = " + GAMING);
-        System.out.println("ad"+JSON.toJSONString(ad));
+        System.out.println("ad"+JSON.toJSONString(minScore));
 
     }
 
