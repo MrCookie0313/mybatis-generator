@@ -12,7 +12,7 @@ spring:
     nacos:
       config:
         server-addr: ${nacos.server-addr}
-        file-extension: yml
+        file-extension: yaml
       discovery:
         server-addr: ${nacos.server-addr}
   main:
@@ -30,4 +30,7 @@ management:
     web:
       exposure:
         include: '*'
-
+config:
+  user:
+    name: dev
+    age: 18
